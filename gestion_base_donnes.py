@@ -55,8 +55,3 @@ def donnes_associer_a_un_numero(nom_categories):
         for i in range(len(rows)):
             print(rows[i])
         return rows
-
-#%%
-ajoute_une_donnees(2,8,2022)
-affiche_tous("donnees")
-# %%
