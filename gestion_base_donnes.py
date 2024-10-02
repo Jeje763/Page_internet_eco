@@ -43,7 +43,7 @@ def trouve_numéro_une_categorie(nom_categories):
     else:
         return int(rows[0][0])
 
-def donnes_associer_a_un_numero(nom_categories):
+def donnes_associer_a_une_categorie(nom_categories):
     """Affiche tt les donnees de la catégories nom_categories"""
     num=trouve_numéro_une_categorie(nom_categories)
     if num==-1:#la catégorie n'existe pas
