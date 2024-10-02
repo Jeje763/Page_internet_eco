@@ -16,7 +16,7 @@ try:
     connection.commit()
 except:
     None
-#%%Ajout des elt aux tables
+#%%Ajout des elt aux tables (E1)
 def ajoute_une_categorie(nom):
     a="'"+nom+"'"
     requete="INSERT INTO categorie (nom_cat) VALUES("+a+")"
@@ -27,7 +27,7 @@ def ajoute_une_donnees(id_cat,chiffre,annee):
     requete="INSERT INTO donnees (id_cat,chiffre,annee) VALUES("+a+","+b+","+c+")"
     cursor2.execute(requete)
     connection2.commit()
-#%%Fonction d'affichage
+#%%Fonction d'affichage (E2)
 def affiche_tous(nom_de_la_base):
     cursor2.execute("SELECT * FROM "+ nom_de_la_base)
     rows=cursor2.fetchall()
