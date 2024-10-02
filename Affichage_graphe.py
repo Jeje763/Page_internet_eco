@@ -1,8 +1,10 @@
 #%%
 import matplotlib.pyplot as plt
 import numpy as np
+
+#IL PEUT ETRE INTERESSANT DE RAJOUTER UNE OPTION COMME LE POURCENTAGE MINIMUM MAIS POUR LE HISTOGRAMMES
 #%%
-if True:
+if True:  #fonction d'ajustement des données
      def mirroir(L):
           n=len(L)
           for k in range(n//2):
@@ -27,15 +29,32 @@ if True:
                tri_decroissant(X,Y)
           else:
                None
-
+     def ajuste(X,pourc,minimum_pourcent_pie):
+          ordonne(X,pourc,"croissant")
+          while pourc[0]<minimum_pourcent_pie:
+               del X[0]
+               del pourc[0]
+          s=sum(pourc)
+          if s!=100:
+               X.append("autre")
+               a=100-s
+               pourc.append(int(10*a)/10)
 def affichage(X,Y,format,L):
      """L est la liste des options/paramètre"""
-     ordre,couleur=L[0],L[1]
-     titre,nom_grandX,nom_grandY=L[2],L[3],L[4]
-     affich_titre,affich_grandX,affich_grandY=L[5],L[6],L[7]
-     nom_legend,legend,reg_lin,coul_reg_lin=L[8],L[9],L[10],L[11] #légende pour une courbe
-     ordonne(X,Y,ordre)
-     if True: #titre,nom grandeur X,nom grandeur Y
+     if True:#récupère toute les options
+          #générique 
+          ordre,couleur=L[0],L[1]
+          titre,nom_grandX,nom_grandY=L[2],L[3],L[4]
+          affich_titre,affich_grandX,affich_grandY=L[5],L[6],L[7]
+          #histogramme
+          horizontalite=L[8]
+          #courbe
+          nom_legend,legend,reg_lin,coul_reg_lin=L[9],L[10],L[11],L[12] #légende pour une courbe
+          #camembert
+          label_pie,affiche_pour,affichage_total=L[13],L[14],L[15]
+          minimum_pourcent_pie=L[16]
+     if True: #ordre,titre,nom grandeur X,nom grandeur Y
+          ordonne(X,Y,ordre)
           if affich_titre:
                plt.title(titre)
           if affich_grandX:
@@ -43,7 +62,10 @@ def affichage(X,Y,format,L):
           if affich_grandY:
                plt.ylabel(nom_grandY)
      if format=="histogramme":
-          plt.bar(X,Y,edgecolor='black',color=couleur)
+          if horizontalite:
+               plt.barh(X,Y,edgecolor='black',color=couleur)
+          else:
+               plt.bar(X,Y,edgecolor='black',color=couleur)
      if format=="courbe":
           if legend:
                plt.plot(X,Y,color=couleur,label=nom_legend)
@@ -59,7 +81,21 @@ def affichage(X,Y,format,L):
           if legend:
                plt.legend()
      if format=="camembert":
-          #A Completer
-Opt=["","black","Titre_graphe","GX","GY",True,True,True,"Leg",True,True,"blue"]
-affichage([1,2,3,4,5],[2,4,7,7,10],"courbe",Opt)
+          s=sum(Y)
+          pourc=[int(1000*y/s)/10 for y in Y]
+          ajuste(X,pourc,minimum_pourcent_pie)
+          print(X)
+          print(pourc)
+          print(minimum_pourcent_pie)
+          if affiche_pour:
+               label_pie=True
+               X=[X[k]+"\n"+str(pourc[k])+"%" for k in range(len(X))]
+          if affichage_total:
+               plt.figtext(0.1, 0.1,"Total= "+str(int(1000*s)/1000))
+          if label_pie:
+               plt.pie(pourc,labels=X)
+          else:
+               plt.pie(pourc)
+Opt=["croissant","blue","Titre_graphe","GX","GY",True,True,True,True,"Leg",True,True,"blue",True,True,True,25]
+affichage(["AAA","B","C","D"],[1.5,3.7,2.65,6.294],"histogramme",Opt)
 # %%
