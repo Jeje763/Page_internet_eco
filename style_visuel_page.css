@@ -1,0 +1,21 @@
+.banniere{background-image: linear-gradient(to left,#006fdb,#1e90ff);;
+            height:5em;}
+.banniere h1 {color:black;
+            margin-left:2em;
+            padding-top:0.25em;}
+
+.navigation{display:grid;
+           grid-template-columns: 25fr 25fr;
+           gap:15fr;
+           margin : auto;}
+.case{border : 0.1em black solid;
+      background-color: aquamarine;}
+.case a{color:black;
+        padding-left: 4em ;}
+
+input[type='reset'],
+input[type='reset'] {
+             grid-column: 2;
+             grid-row: 2;
+           }
+           

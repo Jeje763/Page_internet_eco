@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="{{ url_for('static', filename='style_visuel_page.css') }}">
+</head>
+
+<!--      <link href="style_visuel_page.css" rel="stylesheet">
+Laison de page -->
+<header>
+     <div class="banniere"> 
+          <h1>Création de graphique sur les annuelle sur "l'état de l'enseignement supérieur et de la recherche en France"</h1>
+     </div>
+</header>
+
+<nav>
+     <div class="navigation">  
+          <div class="case"> 
+               <a href="/page_acceuil"> Lien vers la page d'acceuil </a>
+          </div>
+          <div class="case">  
+               <a href="/">Lien vers la page d'affichage graphique</a>
+          </div>
+     </div>
+</nav>
+<!-- Liaison de page -->
+<form method="POST" action="/">
+
+<h3> <underline> Donnée du graphique:</underline> </h3>
+          <select name="Categorie_donnee" id="Catégorie de donnée">
+               <option value="">--Please choose an option--</option>
+               <option value="Cat1">Cat1</option>
+               <option value="Cat2">Cat2</option>
+               <option value="Cat3">Cat3</option>
+               <option value="Cat4">Cat4</option>
+               <option value="Cat5">Cat5</option>
+               <option value="Cat6">Cat6</option>
+             </select>
+
+<h3> <underline> Type de graphique:</underline> </h3>
+          <INPUT TYPE="radio" NAME= "format_graph" VALUE="Courbe"> Courbe <br>
+          <INPUT TYPE="radio" NAME= "format_graph" VALUE="Histogramme"> Histogramme <br>
+          <INPUT TYPE="radio" NAME= "format_graph" VALUE="Camembert"> Camembert <br>
+
+<h3> <underline> Option commun a chaque type de graphe:</underline> </h3>
+     Titre du graphique: <INPUT TYPE="text" VALUE=" " NAME="Titre_graph" SIZE="30"> <br>
+     Nom de l'axe horizontal (année en général): <INPUT TYPE="text" VALUE=" " NAME="Nom_axe_x" SIZE="30"> <br>
+     Nom de l'axe verticale (donnée choisie): <INPUT TYPE="text" VALUE=" " NAME="Nom_axe_y" SIZE="30"> <br>
+     Couleur voulue des données:           
+          <select name="Couleur" id="Choix de couleurs">
+               <option value="black">--Please choose an option--</option>
+               <option value="black">black</option>
+               <option value="blue">blue</option>
+               <option value="red">red</option>
+               <option value="green">green</option>
+             </select>
+     
+
+<h3> <underline> Option associée aux histogramme:</underline> </h3>
+     Ordonne de façon croissante les données: <INPUT TYPE="radio" NAME= "ordre" VALUE="croissant"> <br>
+     Ordonne de façon décroissante les données: <INPUT TYPE="radio" NAME= "ordre" VALUE="décroissant">  <br>
+     Affiche les données par des barres horizontales (verticales par défaut): <INPUT TYPE="radio" NAME= "horizont" VALUE="True"> <br>
+
+<h3> <underline> Option associée aux courbes:</underline> </h3>
+     Effectue une régression linéaire des données: <INPUT TYPE="radio" NAME= "reg" VALUE="True"> <br>
+     Couleur de la droite de régression:           
+          <select name="Couleur_reg" id="Choix de couleurs">
+               <option value="purple">--Please choose an option--</option>
+               <option value="black">black</option>
+               <option value="blue">blue</option>
+               <option value="red">red</option>
+               <option value="green">green</option>
+             </select> <br>
+     Mettre en légende les couleurs associées a chaque courbes: <INPUT TYPE="radio" NAME= "legend" VALUE="True">  <br>
+     Nom de légende correspondante aux donnés: <INPUT TYPE="text" VALUE="" NAME="nom_legend" SIZE="30"> <br>
+
+<h3> <underline> Option associée aux diagramme en camembert:</underline> </h3>
+     Affiche le nom/date associée aux données : <INPUT TYPE="radio" NAME= "label_pie" VALUE="True"> <br>
+     Affiche le pourcentage de chaque part : <INPUT TYPE="radio" NAME= "affiche_pource" VALUE="True"> <br>
+     Affiche le total des données (pas en pourcentage) : <INPUT TYPE="radio" NAME= "affichage_total" VALUE="True"> <br>
+     Pourcentage minimum pour être afficher (une catégorie autre les regroupes): <INPUT TYPE="text" VALUE="0" NAME="minimum_pourcent_pie" SIZE="30"> <br>
+     Attention a bien mettre un nombre! <br>
+
+<INPUT TYPE="submit" VALUE="Tracer le graphique" NAME="bouton_trace">    <INPUT TYPE="reset" VALUE="Réinitialiser les cases cochers" >
+
+</form>
+
+{% if image %}
+<h2>Image associée :</h2>
+<img src="{{ image }}" alt="Graphique" style="max-width: 100%; height: auto;">
+{% endif %}
+
+
+</html>
+
