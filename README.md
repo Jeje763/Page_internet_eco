@@ -7,7 +7,7 @@
 
 -Je n'arrive pas a mettre des dossiers dans git (et les construires donc voici un schéma des dossier pour que cela fonction:
 
--
+-Projet
     -templates
         -page_acceuil.html
         -page_affichage_graphique.html
@@ -18,3 +18,7 @@
     -gestion_base_donnes(E1_et_E2).py
     -categorie.db
     -donnees.db
+
+-Pour lancer l'application, j'execute la commande suivante: python Projet/recup_donnee.py
+Module nécessaire:  flask , os, numpy , matplotlib , sqlite3
+
