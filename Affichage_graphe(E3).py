@@ -45,22 +45,18 @@ def affichage(X,Y,format,L):
           #générique 
           ordre,couleur=L[0],L[1]
           titre,nom_grandX,nom_grandY=L[2],L[3],L[4]
-          affich_titre,affich_grandX,affich_grandY=L[5],L[6],L[7]
           #histogramme
-          horizontalite=L[8]
+          horizontalite=L[5]
           #courbe
-          nom_legend,legend,reg_lin,coul_reg_lin=L[9],L[10],L[11],L[12] #légende pour une courbe
+          nom_legend,legend,reg_lin,coul_reg_lin=L[6],L[7],L[8],L[9] #légende pour une courbe
           #camembert
-          label_pie,affiche_pour,affichage_total=L[13],L[14],L[15]
-          minimum_pourcent_pie=L[16]
+          label_pie,affiche_pour,affichage_total=L[10],L[11],L[12]
+          minimum_pourcent_pie=L[13]
      if True: #ordre,titre,nom grandeur X,nom grandeur Y
           ordonne(X,Y,ordre)
-          if affich_titre:
-               plt.title(titre)
-          if affich_grandX:
-               plt.xlabel(nom_grandX)
-          if affich_grandY:
-               plt.ylabel(nom_grandY)
+          plt.title(titre)
+          plt.xlabel(nom_grandX)
+          plt.ylabel(nom_grandY)
      if format=="histogramme":
           if horizontalite:
                plt.barh(X,Y,edgecolor='black',color=couleur)
@@ -96,6 +92,7 @@ def affichage(X,Y,format,L):
                plt.pie(pourc,labels=X)
           else:
                plt.pie(pourc)
-Opt=["croissant","blue","Titre_graphe","GX","GY",True,True,True,True,"Leg",True,True,"blue",True,True,True,25]
+
+Opt=["croissant","blue","Titre_graphe","GX","GY",True,"Leg",True,True,"blue",True,True,True,25]
 affichage(["AAA","B","C","D"],[1.5,3.7,2.65,6.294],"histogramme",Opt)
 # %%
