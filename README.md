@@ -3,6 +3,7 @@
 
 -La base de données SQL a été créer a la 'main' (grâce aux fonctions d'ajout fait dans le fichier python associées). 
 
+-Le fichier "gestion_base_donnes(E1_et_E2)" n'est utile que pour la création des bases de données. La partie recherche dans la base a été copié collée dans le code recup_donnee.py
 -Le fichier "Affichage_graphe(E3).py" n'est pas un vrai fichier du projet. Il est juste un 'grand' extrait du fichier python principal et permet de mieux comprendre le traitement des données afin de tracer le graphique.
 En effet, le code python a été recopier dans le fichier recup_donnee.py avec quelque ajustement afin de pouvoir utiliser le module Flask.
 
@@ -15,10 +16,11 @@ En effet, le code python a été recopier dans le fichier recup_donnee.py avec q
     -static
         -style_visuel_page.css
         -images (UN DOSSIER QUI CONTIENDRA TEMPORAIREMENT LE GRAPHIQUE)
+    -data
+        -categorie.db
+        -donnees.db
     -recup_donnee.py (1) 
     -gestion_base_donnes(E1_et_E2).py
-    -categorie.db
-    -donnees.db
 
 -Pour lancer l'application, j'execute la commande suivante: python Projet/recup_donnee.py (1)
 Module nécessaire:  flask , os, numpy , matplotlib , sqlite3
