@@ -24,5 +24,6 @@ En effet, le code python a été recopier dans le fichier recup_donnee.py avec q
 
 -Pour lancer l'application, j'execute la commande suivante: python chemin/recup_donnee.py (1)
 Module nécessaire:  flask , os, numpy , matplotlib , sqlite3
+Si cela ne marche pas, enlever les arguments pour host et port dans la dernière ligne de "recup_donnee.py"
 
 (1): la dernière ligne de code  du fichier recup_donnee.py peut être modifier afin de changer le port en cas de problème.
