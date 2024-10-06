@@ -22,7 +22,7 @@ En effet, le code python a été recopier dans le fichier recup_donnee.py avec q
     -recup_donnee.py (1) 
     -gestion_base_donnes(E1_et_E2).py
 
--Pour lancer l'application, j'execute la commande suivante: python Projet/recup_donnee.py (1)
+-Pour lancer l'application, j'execute la commande suivante: python chemin/recup_donnee.py (1)
 Module nécessaire:  flask , os, numpy , matplotlib , sqlite3
 
 (1): la dernière ligne de code  du fichier recup_donnee.py peut être modifier afin de changer le port en cas de problème.
