@@ -98,7 +98,7 @@ if True:# Fonctions de traitement des données et d'affichage
                tri_decroissant(X, Y)
      def ajuste(X, pourc, minimum_pourcent_pie):
           ordonne(X, pourc, "croissant")
-          while pourc[0] < minimum_pourcent_pie:
+          while pourc!=[] and pourc[0] < minimum_pourcent_pie:
                del X[0]
                del pourc[0]
           s = sum(pourc)
@@ -191,10 +191,6 @@ def submit():
                except ValueError:
                    minimum_pourcent_pie = 0.0  # Valeur par défaut en cas d'erreur
           # Traiter les données pour générer un graphique
-        cursor2.execute("SELECT * FROM donnees")
-        rows=cursor2.fetchall()
-        for row in rows:
-           print(dict(row))
         Y,X=requete_au_bon_format(categorie)
         Y, X = requete_au_bon_format(categorie)
         print(f"Valeurs X : {X}, Valeurs Y : {Y}")
@@ -210,7 +206,7 @@ def submit():
         
         # Chemin pour enregistrer l'image dans le dossier 'static/images'
         image_name = "Image_plt.png"
-        image_folder = os.path.join('site_cours_eco','static', 'images')
+        image_folder = os.path.join('Page_internet_eco','static', 'images')
         image_path = os.path.join(image_folder, image_name)
         # Crée le dossier 'static/images' s'il n'existe pas
         if not os.path.exists(image_folder):
