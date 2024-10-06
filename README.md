@@ -22,7 +22,10 @@ En effet, le code python a été recopier dans le fichier recup_donnee.py avec q
     -recup_donnee.py (1) 
     -gestion_base_donnes(E1_et_E2).py
 
--Pour lancer l'application, j'execute le fichier "gestion_base_donnes(E1_et_E2)" puis je fais la commande suivante: python chemin/recup_donnee.py (1)
+-Pour lancer l'application il faut
+    i) Creer un dossier vide intitués images dans static
+    ii) Exécuter le fichier "gestion_base_donnes(E1_et_E2)" 
+    iii) Faire la commande suivante: python chemin/recup_donnee.py (1)
 Module nécessaire:  flask , os, numpy , matplotlib , sqlite3
 Si cela ne marche pas, enlever les arguments pour host et port dans la dernière ligne de "recup_donnee.py"
 
