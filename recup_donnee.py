@@ -144,11 +144,8 @@ if True:# Fonctions de traitement des données et d'affichage
                     plt.figtext(0.1, 0.1, f"Total= {int(1000 * s) / 1000}")
                plt.pie(pourc, labels=X if label_pie else None)
 
-          try:
-               plt.savefig(adresse)
-               print(f"Image saved at: {adresse}")
-          except Exception as e:
-               print(f"Error saving image: {e}")
+          plt.savefig(adresse)
+          print(f"Image saved at: {adresse}")
           plt.close()
 # Configuration de l'application Flask
 app = Flask(__name__)
