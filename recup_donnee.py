@@ -206,7 +206,7 @@ def submit():
         
         # Chemin pour enregistrer l'image dans le dossier 'static/images'
         image_name = "Image_plt.png"
-        image_folder = os.path.join('Page_internet_eco','static', 'images')
+        image_folder = os.path.join('static', 'images')
         image_path = os.path.join(image_folder, image_name)
         # Crée le dossier 'static/images' s'il n'existe pas
         if not os.path.exists(image_folder):
