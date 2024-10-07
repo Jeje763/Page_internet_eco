@@ -143,10 +143,10 @@ if True:# Fonctions de traitement des données et d'affichage
                if affichage_total:
                     plt.figtext(0.1, 0.1, f"Total= {int(1000 * s) / 1000}")
                plt.pie(pourc, labels=X if label_pie else None)
-
+          os.remove(adresse)          
           plt.savefig(adresse)
-          print(f"Image saved at: {adresse}")
           plt.close()
+          print(f"Image saved at: {adresse}")
 # Configuration de l'application Flask
 app = Flask(__name__)
 
@@ -203,7 +203,7 @@ def submit():
         
         # Chemin pour enregistrer l'image dans le dossier 'static/images'
         image_name = "Image_plt.png"
-        image_folder = os.path.join('static', 'images')
+        image_folder = os.path.join('Page_internet_eco','static', 'images')
         image_path = os.path.join(image_folder, image_name)
         # Crée le dossier 'static/images' s'il n'existe pas
         if not os.path.exists(image_folder):
@@ -218,6 +218,8 @@ def submit():
         return render_template('page_affichage_graphique.html', image=image_path)
 
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0', port=5000)
+    app.run(debug=True)
 
-
+#%%
+affiche_tous('categorie')
+# %%
