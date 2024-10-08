@@ -7,8 +7,6 @@
 -Le fichier "Affichage_graphe(E3).py" n'est pas un vrai fichier du projet. Il est juste un 'grand' extrait du fichier python principal et permet de mieux comprendre le traitement des données afin de tracer le graphique.
 En effet, le code python a été recopier dans le fichier recup_donnee.py avec quelque ajustement afin de pouvoir utiliser le module Flask.
 
--Je n'arrive pas a mettre des dossiers dans git (et les construires donc voici un schéma des dossier pour que cela fonction:
-
 -Projet
     -templates
         -page_acceuil.html
@@ -22,10 +20,9 @@ En effet, le code python a été recopier dans le fichier recup_donnee.py avec q
     -recup_donnee.py (1) 
     -gestion_base_donnes(E1_et_E2).py
 
--Pour lancer l'application il faut
-    i) Creer un dossier vide intitués images dans static
-    ii) Exécuter le fichier "gestion_base_donnes(E1_et_E2)" 
-    iii) Faire la commande suivante: python chemin/recup_donnee.py (1)
+-Pour lancer l'application il faut:
+    i) Exécuter le fichier "gestion_base_donnes(E1_et_E2)" 
+    ii) Faire la commande suivante: python chemin/recup_donnee.py (1)
 Module nécessaire:  flask , os, numpy , matplotlib , sqlite3
 Si cela ne marche pas,
 -enlever l'argument 'Page_internet_eco' dans la ligne 209(environ 15ème en partant d'en bas) de recup_donne.py 
