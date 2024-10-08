@@ -27,6 +27,10 @@ En effet, le code python a été recopier dans le fichier recup_donnee.py avec q
     ii) Exécuter le fichier "gestion_base_donnes(E1_et_E2)" 
     iii) Faire la commande suivante: python chemin/recup_donnee.py (1)
 Module nécessaire:  flask , os, numpy , matplotlib , sqlite3
-Si cela ne marche pas, enlever les arguments pour host et port dans la dernière ligne de "recup_donnee.py"
+Si cela ne marche pas,
+-enlever l'argument 'Page_internet_eco' dans la ligne 209(environ 15ème en partant d'en bas) de recup_donne.py 
+( image_folder = os.path.join('Page_internet_eco','static', 'images') devient   image_folder = os.path.join('static', 'images') )
+
+-enlever les arguments pour host et port dans la dernière ligne de "recup_donnee.py"
 
 (1): la dernière ligne de code  du fichier recup_donnee.py peut être modifier afin de changer le port en cas de problème.
