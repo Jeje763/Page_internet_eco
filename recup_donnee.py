@@ -143,7 +143,10 @@ if True:# Fonctions de traitement des données et d'affichage
                if affichage_total:
                     plt.figtext(0.1, 0.1, f"Total= {int(1000 * s) / 1000}")
                plt.pie(pourc, labels=X if label_pie else None)
-          os.remove(adresse)          
+          try: #enleve l'ancien graphique
+               os.remove(adresse)
+          except:
+               None
           plt.savefig(adresse)
           plt.close()
           print(f"Image saved at: {adresse}")
